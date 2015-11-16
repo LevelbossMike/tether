@@ -22,6 +22,9 @@
     var el, key, _i, _len, _ref1;
     el = document.createElement('div');
     _ref1 = ['transform', 'webkitTransform', 'OTransform', 'MozTransform', 'msTransform'];
+    if (platform && (platform.toString() === 'IE 11.0 on Windows 8.1')) {
+      return 'msTransform';
+    }
     for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
       key = _ref1[_i];
       if (el.style[key] !== void 0) {
